@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'create.css' %}" rel='stylesheet'>
+{% endblock customcss %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<h1 class="title">新規作成</h1>
+<table>
+    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <tr class="left"><td>タイトル:</td><td>{{ form.title }}</td></tr>
+        <tr><td class="left">内容:</td><td>{{ form.content }}</td></tr>
+        <input type="file" name="snsimage">
+        <input type="hidden" name="author" value="{{ user.username }}"></td></tr>
+        <tr><td class="left"><input type="submit" value="create"></td></tr>
+    </form>
+    <tr><td class="left"><a href="{% url 'list' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">戻る</a></td></tr>
+</table>
+{% else %}
+please login
+{% endif %}
+{% endblock content %}

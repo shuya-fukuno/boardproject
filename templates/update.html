@@ -1,0 +1,23 @@
+<html>
+{% extends 'base.html' %}    
+{% block content %}
+
+<!-- {% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'todo/update.css' %}">
+</head> -->
+
+<h1 class="title">編集画面</h1>
+<table>
+    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <tr class="left"><td>タイトル：</td><td>{{ form.title }}</td></tr>
+        <tr><td class="left">内容：</td><td>{{ form.content }}</td></tr>
+        <img><input type="file" name="snsimage"></img>
+        <input type="hidden" name="author" value="{{ user.username }}">
+        <tr><td><h4 class="update_buttom"><input type="submit" value="update">
+        </h4></td></tr>
+    </form>
+    <a href="{% url 'list' %}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">戻る</a>    
+</table>
+{% endblock content %}
+</html>

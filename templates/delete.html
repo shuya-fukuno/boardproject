@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block customcss %}
+<link href="{% static 'delete.css' %}" rel='stylesheet'>
+{% endblock customcss %}
+
+{% block content %}
+<div class="delete_message">削除しますか？</div>
+
+<form class="button_1" action="" method="POST">{% csrf_token %}
+  <input type="submit" value="YES">
+</form>
+
+<a class="button_2" href="{% url 'list' %}">
+  <input type="submit" value="NO">
+</a>
+
+{% endblock content %}

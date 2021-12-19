@@ -1,0 +1,17 @@
+.delete_message {
+    font-size: 30px;
+    margin-left: 2%;
+    margin-bottom: 15px;
+}
+
+.button_1 {
+    display: inline-block;
+    margin-left: 3.3%;
+    margin-right: 5px;
+    font-size: 25px;
+}
+
+.button_2 {
+    display: inline-block;
+    font-size: 25px;
+}

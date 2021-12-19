@@ -1,0 +1,13 @@
+.title {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+}
+
+.left {
+    vertical-align: top;
+}
+
+td {
+    border: 15px solid transparent;
+}
